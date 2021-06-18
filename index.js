@@ -5,9 +5,9 @@ const typeDefs = require("./graphql/typeDefs");
 const { MONGODB } = require("./config.js");
 const resolvers = require("./graphql/resolvers");
 
-const pubsub = new PubSub();
-
 const PORT = process.env.PORT || 5000;
+
+const pubsub = new PubSub();
 
 const server = new ApolloServer({
   typeDefs,
@@ -27,3 +27,4 @@ mongoose
   .catch(err => {
     console.error(err)
   })
+
